@@ -13,6 +13,7 @@ class _GoogleMapsBasicSetupWithControllerState
     extends State<GoogleMapsBasicSetupWithController> {
   late GoogleMapController mapController;
   String currentMapStyle = "first_style";
+  //list of avaialble map styles
   List<String> mapStyleOptions = [
     "first_style",
     "second_style",
@@ -20,21 +21,11 @@ class _GoogleMapsBasicSetupWithControllerState
     "forth_style",
     "fifth_style"
   ];
+  //list of markers
+  Set<Marker> markers = Set<Marker>();
 
-  List<DropdownMenuItem<int>>? styleOptions = [
-    DropdownMenuItem<int>(
-      key: UniqueKey(),
-      onTap: () {},
-      value: 2,
-      child: const Text("Theme 2"),
-    ),
-    DropdownMenuItem<int>(
-      key: UniqueKey(),
-      onTap: () {},
-      value: 3,
-      child: const Text("Theme 3"),
-    ),
-  ];
+  //list of polygons
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -100,6 +91,9 @@ class _GoogleMapsBasicSetupWithControllerState
           ),
           Expanded(
             child: GoogleMap(
+              onLongPress: (LatLng latLng) {
+                // Do something when the map is long pressed
+              },
               onTap: (LatLng latLng) {
                 // Do something when the map is tapped
               },
