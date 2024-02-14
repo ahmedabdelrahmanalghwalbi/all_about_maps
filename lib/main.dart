@@ -33,13 +33,21 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: const Text("All About Maps"),
+        backgroundColor: Colors.red,
+        centerTitle: true,
+        title: const Text(
+          "All About Maps",
+          style: TextStyle(color: Colors.white),
+        ),
       ),
       body: Center(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
+            const SizedBox(
+              height: 16,
+            ),
             //Google maps Basic Setup with GoogleMapsController
             NavigatorButton(
               buttonTitle: 'Google Maps Basic Setup with Controller',
@@ -73,9 +81,12 @@ class NavigatorButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return ElevatedButton(
         onPressed: onPressed,
+        style: ButtonStyle(
+          backgroundColor: MaterialStateProperty.all<Color>(Colors.red),
+        ),
         child: Text(
           buttonTitle,
-          style: TextStyle(color: color),
+          style: const TextStyle(color: Colors.white),
         ));
   }
 }
