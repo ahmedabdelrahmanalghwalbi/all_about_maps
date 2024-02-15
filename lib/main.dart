@@ -50,7 +50,7 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             //Google maps Basic Setup with GoogleMapsController
             NavigatorButton(
-              buttonTitle: 'Google Maps Basic Setup with Controller',
+              buttonTitle: 'All About ( Markers - MapController - Styles )',
               color: Colors.greenAccent,
               onPressed: () {
                 Navigator.push(
