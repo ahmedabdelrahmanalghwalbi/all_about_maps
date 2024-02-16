@@ -1,6 +1,6 @@
 import 'package:all_about_maps/Features/basic_map_setup_with_map_controller/basic_map_setup_with_controller.dart';
 import 'package:all_about_maps/Features/geocoding/geocoding.dart';
-import 'package:all_about_maps/Features/geolocator/geolocator_my_location.dart';
+import 'package:all_about_maps/Features/geolocator_&_location/geolocator_and_location_my_location.dart';
 import 'package:all_about_maps/Features/map_circles/map_circles.dart';
 import 'package:all_about_maps/Features/map_places_api/map_places_api.dart';
 import 'package:all_about_maps/Features/map_polygons/map_polygons.dart';
@@ -84,7 +84,7 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             //geolocator (current location)
             NavigatorButton(
-              buttonTitle: 'Geolocator',
+              buttonTitle: 'Geolocator & Location',
               color: Colors.greenAccent,
               onPressed: () {
                 Navigator.push(context,
