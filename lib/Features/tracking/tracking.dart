@@ -27,21 +27,13 @@ class _TrackingState extends State<Tracking> {
             )),
         centerTitle: true,
         title: const Text(
-          "Geocoding",
+          "Tracking",
           style: TextStyle(color: Colors.white, fontSize: 14),
         ),
         backgroundColor: Colors.red,
       ),
       body: Column(
         children: [
-          const SizedBox(
-            height: 12,
-          ),
-          const Text("Current Location After Geocoding :-"),
-          const SizedBox(
-            height: 12,
-          ),
-          const Text(""),
           const SizedBox(
             height: 12,
           ),

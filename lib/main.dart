@@ -6,7 +6,6 @@ import 'package:all_about_maps/Features/map_places_api/map_places_api.dart';
 import 'package:all_about_maps/Features/map_polygons/map_polygons.dart';
 import 'package:all_about_maps/Features/map_polylines/map_polylines.dart';
 import 'package:all_about_maps/Features/maps_custom_info_window/maps_custom_info_window.dart';
-import 'package:all_about_maps/map_tileoverlay/map_tile_overlay.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -139,18 +138,6 @@ class _MyHomePageState extends State<MyHomePage> {
               onPressed: () {
                 Navigator.push(context,
                     MaterialPageRoute(builder: (_) => const MapPolylines()));
-              },
-            ),
-            const SizedBox(
-              height: 16,
-            ),
-            //map tileoverlays
-            NavigatorButton(
-              buttonTitle: 'Map TileOverlay',
-              color: Colors.greenAccent,
-              onPressed: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (_) => const MapTileOverlay()));
               },
             ),
             const SizedBox(
