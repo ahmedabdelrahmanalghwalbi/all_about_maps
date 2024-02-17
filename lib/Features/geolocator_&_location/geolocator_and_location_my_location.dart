@@ -1,5 +1,7 @@
 import 'package:all_about_maps/Features/geolocator_&_location/services/geolocator_services.dart';
 import 'package:all_about_maps/Features/geolocator_&_location/services/location_services.dart';
+import 'package:all_about_maps/Features/geolocator_&_location/stream_watching_locations_widgets/watch_location_using_geolocator.dart';
+import 'package:all_about_maps/Features/geolocator_&_location/stream_watching_locations_widgets/watch_location_using_location.dart';
 import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
@@ -24,9 +26,6 @@ class _MapsGeolocatorState extends State<MapsGeolocator> {
   @override
   void initState() {
     super.initState();
-
-    // To receive location when application is in background you have to enable it:
-    LocationServices.enableBackgroundLocation();
   }
 
   @override
@@ -51,32 +50,11 @@ class _MapsGeolocatorState extends State<MapsGeolocator> {
           const SizedBox(
             height: 12,
           ),
-          const Text(
-            "Watch My Current Location Stream Using Geolocator :-",
-            style: TextStyle(
-                color: Colors.black, fontSize: 15, fontWeight: FontWeight.bold),
-          ),
+          const WatchMyLocationInStreamByUsingGeolocator(),
           const SizedBox(
             height: 6,
           ),
-          const Text(
-            "",
-            style: TextStyle(
-                color: Colors.blue, fontSize: 15, fontWeight: FontWeight.bold),
-          ),
-          const Text(
-            "Watch My Current Location Stream Using Location :-",
-            style: TextStyle(
-                color: Colors.black, fontSize: 15, fontWeight: FontWeight.bold),
-          ),
-          const SizedBox(
-            height: 12,
-          ),
-          const Text(
-            "",
-            style: TextStyle(
-                color: Colors.blue, fontSize: 15, fontWeight: FontWeight.bold),
-          ),
+          const WatchMyLocationInStreamByUsingLocation(),
           const SizedBox(
             height: 12,
           ),
