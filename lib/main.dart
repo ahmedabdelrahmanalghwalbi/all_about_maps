@@ -9,8 +9,10 @@ import 'package:all_about_maps/Features/map_polylines/map_polylines.dart';
 import 'package:all_about_maps/Features/maps_custom_info_window/maps_custom_info_window.dart';
 import 'package:all_about_maps/Features/open_street_maps/search_with_picking_location_using_open_street_api.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 
-void main() {
+void main() async {
+  await dotenv.load();
   runApp(const MyApp());
 }
 

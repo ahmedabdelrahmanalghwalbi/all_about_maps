@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:google_maps_webservice/places.dart';
 
 class GoogleMapsSearchUsingApiPlacesAndWebServicesPackage
@@ -14,7 +15,7 @@ class _GoogleMapsSearchUsingApiPlacesAndWebServicesPackageState
     extends State<GoogleMapsSearchUsingApiPlacesAndWebServicesPackage> {
   TextEditingController searchController = TextEditingController();
   GoogleMapsPlaces places =
-      GoogleMapsPlaces(apiKey: 'AIzaSyCMM6e1mI6uIKN5Kp86mejDLsl5pSJTERg');
+      GoogleMapsPlaces(apiKey: dotenv.env['GOOGLE_MAPS_API_KEY']);
   List<PlacesSearchResult> _searchResults = [];
 
   @override
