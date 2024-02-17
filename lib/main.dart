@@ -2,11 +2,11 @@ import 'package:all_about_maps/Features/basic_map_setup_with_map_controller/basi
 import 'package:all_about_maps/Features/geocoding/geocoding.dart';
 import 'package:all_about_maps/Features/geolocator_&_location/geolocator_and_location_my_location.dart';
 import 'package:all_about_maps/Features/map_circles/map_circles.dart';
-import 'package:all_about_maps/Features/map_places_api/map_places_api.dart';
+import 'package:all_about_maps/Features/map_places_api/google_maps_search_using_api_places.dart';
 import 'package:all_about_maps/Features/map_polygons/map_polygons.dart';
 import 'package:all_about_maps/Features/map_polylines/map_polylines.dart';
 import 'package:all_about_maps/Features/maps_custom_info_window/maps_custom_info_window.dart';
-import 'package:all_about_maps/Features/offline_maps/offline_map.dart';
+import 'package:all_about_maps/Features/open_street_maps/search_with_picking_location_using_open_street_api.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -101,8 +101,11 @@ class _MyHomePageState extends State<MyHomePage> {
               buttonTitle: 'Places Api',
               color: Colors.greenAccent,
               onPressed: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (_) => const MapPlacesApi()));
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (_) =>
+                            const GoogleMapsSearchUsingApiPlacesAndWebServicesPackage()));
               },
             ),
             const SizedBox(
@@ -158,25 +161,34 @@ class _MyHomePageState extends State<MyHomePage> {
             const SizedBox(
               height: 16,
             ),
-            //offline maps
-            NavigatorButton(
-              buttonTitle: 'Offline Maps',
-              color: Colors.greenAccent,
-              onPressed: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (_) => const OfflineMap()));
-              },
-            ),
-            const SizedBox(
-              height: 16,
-            ),
             //Open Street Maps (Api)
             NavigatorButton(
               buttonTitle: 'Open Street Maps (Api)',
               color: Colors.greenAccent,
-              onPressed: () {
-                Navigator.push(
-                    context, MaterialPageRoute(builder: (_) => Container()));
+              onPressed: () async {
+                if (context.mounted) {
+                  await showDialog(
+                    context: context,
+                    builder: (context) => Scaffold(
+                      appBar: AppBar(
+                        backgroundColor: Colors.red,
+                        title: const Text(
+                          "Search and picking using Street api",
+                          style: TextStyle(color: Colors.white),
+                        ),
+                      ),
+                      body: PickFromMap(
+                          center: LatLong(37.7749, -122.4194),
+                          zoomOutIcon: Icons.zoom_out,
+                          zoomInIcon: Icons.zoom_in,
+                          buttonText: 'Set Current Location',
+                          onPicked: (pickedData) {
+                            debugPrint(
+                                ">>>>> this is picked Data ${pickedData.latLong.toString()}");
+                          }),
+                    ),
+                  );
+                }
               },
             ),
             const SizedBox(
