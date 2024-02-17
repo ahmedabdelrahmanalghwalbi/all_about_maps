@@ -10,6 +10,13 @@ onMapCreated: (GoogleMapController controller) {
     controller.setMapStyle(mapStyle);
   },
 
+
+////// IMPORTANT :-
+------------------
+TO CREATE AN STYLE THERE ARE TWO WAYS :-
+  1- FRIST WAY USING GOOGLE MAPS PLATFPRM FROM STYLES TABS IN SIDE MENU URL :- https://console.cloud.google.com/google/maps-apis/studio/styles?pli=1&project=MYPROJECT 
+  2- FROM MAPS STYLE WIZARED URL :- https://mapstyle.withgoogle.com/ .
+
 */
 
 Map<String, String> mapsStyles = {
