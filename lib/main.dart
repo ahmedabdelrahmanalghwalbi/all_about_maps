@@ -6,6 +6,7 @@ import 'package:all_about_maps/Features/map_places_api/map_places_api.dart';
 import 'package:all_about_maps/Features/map_polygons/map_polygons.dart';
 import 'package:all_about_maps/Features/map_polylines/map_polylines.dart';
 import 'package:all_about_maps/Features/maps_custom_info_window/maps_custom_info_window.dart';
+import 'package:all_about_maps/Features/offline_maps/offline_map.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -163,7 +164,7 @@ class _MyHomePageState extends State<MyHomePage> {
               color: Colors.greenAccent,
               onPressed: () {
                 Navigator.push(context,
-                    MaterialPageRoute(builder: (_) => const MapPolygons()));
+                    MaterialPageRoute(builder: (_) => const OfflineMap()));
               },
             ),
             const SizedBox(
@@ -174,8 +175,8 @@ class _MyHomePageState extends State<MyHomePage> {
               buttonTitle: 'Open Street Maps (Api)',
               color: Colors.greenAccent,
               onPressed: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (_) => const MapPolygons()));
+                Navigator.push(
+                    context, MaterialPageRoute(builder: (_) => Container()));
               },
             ),
             const SizedBox(
